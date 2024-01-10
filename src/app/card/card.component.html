@@ -1,1 +1,51 @@
-<p>card works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> my app</h1>
+
+<p> card component </p>
+
+<button>ola mundo</button>
+
+
+<ul>
+    <li *ngFor="let p of produtos; let i = index"
+    (click)="remover(i)">
+     {{i}} - s{{p}}
+    </li>
+    <button (click)="adicionar()">
+      adicionar
+    </button>
+</ul>
+
+<div [ngSwitch]=" menuType ">
+    <div *ngSwitchcase="'user'">
+      <ul>
+        <li>editar perfil</li>
+        <li> adicionar cartão</li>
+      </ul>
+
+    </div>
+    <div *ngSwitchcase="'admin'">
+      <ul>
+        <li>editar perfil</li>
+        <li> adicionar cartão</li>
+        <li> gerenciar usuarios</li>
+      </ul>
+
+    </div>
+    <div *ngSwitchcase="'superuser'">
+      <li>editar perfil</li>
+      <li> adicionar cartão</li>
+      <li> gerenciar usuarios</li>
+      <li>gerenciar admins</li>
+    </div>
+</div>
+
+</body>
+</html>
